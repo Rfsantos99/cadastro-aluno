@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="formulario">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <div style="margin: 10px">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome">
+            </div>
+
+            <div style="margin: 10px">
+                <label for="idade">Idade:</label>
+                <input type="number" name="idade" id="idade">
+            </div>
+
+            <div style="margin: 10px">
+
+                <label for="cpf">CPF:</label>
+                <input type="text" name="cpf" id="cpf">
+            </div>
+
+            <div style="margin: 10px">
+
+                <label for="rua">Rua:</label>
+                <input type="text" name="rua" id="rua">
+            </div>
+
+            <div style="margin: 10px">
+
+                <label for="numero">Número:</label>
+                <input type="number" name="numero" id="numero">
+            </div>
+
+            <div style="margin: 10px">
+
+                <label for="bairro">Bairro:</label>
+                <input type="text" name="bairro" id="bairro">
+            </div>
+
+            <div style="margin: 10px">
+
+                <label for="cidade">Cidade:</label>
+                <input type="text" name="cidade" id="cidade">
+            </div>
+
+            <div style="margin: 10px">
+                <label for="estado">Estado:</label>
+                <select name="estado" id="estado" required>
+                    <option disabled selected value="">-Selecione-</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceara</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+            </div>
+
+        </fieldset>
+        <fieldset>
+            <div>
+                <legend>Formação</legend>
+
+                <label for="escolaridade">Escolaridade: </label>
+
+                <input type="radio" name="escolaridade" id="EM" value="Ensino Médio" required>
+                <label for="EM">Ensino Médio:</label>
+
+                <input type="radio" name="escolaridade" id="ES" value="Ensino Superior" required>
+                <label for="ES">Ensino Superior</label>
+
+                <input type="radio" name="escolaridade" id="ET" value="Ensino Técnico" required>
+                <label for="ET">Ensino Técnico</label>
+            </div>
+
+            <div>
+                <label for="interesse" id>Áreaas de Interesse</label>
+                <input type="checkbox" value="exatas" id="exatas" name="interesse">
+                <label for="exatas">Exatas</label>
+                <input type="checkbox" value="humanas" id="humanas" name="interesse">
+                <label for="humanas">Humanas</label>
+                <input type="checkbox" value="nenhuma" id="nenhuma" name="interesse">
+                <label for="nenhuma">Nenhuma</label>
+            </div>
+
+
+        </fieldset>
+
+        <input type="submit" value="Salvar">
+
+    </form>
+
+    <script>
+        let nomeHTML = document.getElementById('nome');
+        let idadeHTML = document.getElementById('idade');
+        let cpfHTML = document.getElementById('cpf');
+        let ruaHTML = document.getElementById('rua');
+        let numeroHTML = document.getElementById('numero');
+        let cidadeHTML = document.getElementById('cidade');
+        let estadoHTML = document.getElementById('estado');
+        let escolaridadeHTML = document.querySelector('input[name=escolaridade]:checked').value;
+        let areainteresseHTML = document.querySelectorAll('input[name="interesse"]:checked');
+
+        let formularioHTML = document.getElementById('formulario');
+
+        formularioHTML.addEventListener('submit', (evento) => {
+            evento.preventDefault();
+
+            console.log(nomeHTML.value)
+            console.log(idadeHTML.value)
+            console.log(cpfHTML.value)
+            console.log(ruaHTML.value)
+            console.log(numeroHTML.value)
+            console.log(cidadeHTML.value)
+            console.log(estadoHTML.options[estadoHTML.selectedIndex].value)
+            console.log(escolaridadeHTML)
+            console.log(areainteresseHTML.value)
+        });
+
+    </script>
+</body>
+
+</html>
